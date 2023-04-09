@@ -1,0 +1,71 @@
+<div class="row">
+    <div class="col-6">
+        <form [formGroup]="post">
+          <label class="mb-1" for="ma">Mã Email</label>
+          <input class="form-control" type="text" formControlName="ma">
+          <label for="noi_dung" class="mt-2 mb-1">Nội dung</label>
+          <textarea class="form-control" type="text" formControlName="noi_dung"></textarea>
+          <label for="creator">Người tạo</label>
+          <input type="text" class="form-control" formControlName="nguoi_tao">
+          <label for="ngay_tao">Ngày tạo</label>
+          <input type="datetime" class="form-control" formControlName="ngay_tao">
+          <label for="nguoi_sua">Người sửa</label>
+          <input type="text" class="form-control" formControlName="nguoi_sua">
+          <label for="ngay_sua">Ngày sửa</label>
+          <input type="datetime" class="form-control" formControlName="ngay_sua">
+          <button class="btn btn-primary mt-2" (click)="SearchByPagingCriteria(0)">Filter</button>
+        </form>
+    </div>
+</div>
+<div class="mt-3" id="tableResults" *ngIf="data?.length > 0">
+<table id="customers">
+    <tr>
+    <th>ID</th>
+    <th>Mã</th>
+    <th>Nội dung</th>
+    <th>Người tạo</th>
+    <th>Ngày tạo</th>
+    <th>Người sửa</th>
+    <th>Ngày sửa</th>
+    <th>Thực hiện</th>
+    </tr>
+    <tr *ngFor="let item of data">
+    <td>{{item.id}}</td>
+    <td>{{item.ma}}</td>
+    <td>{{item.noi_dung}}</td>
+    <td>{{item.nguoi_tao}}</td>
+    <td>{{item.ngay_tao}}</td>
+    <td>{{item.nguoi_sua}}</td>
+    <td>{{item.ngay_sua}}</td>
+    <td>
+        <a (click)="editEmail(item.id)" class="btn btn-sm btn-primary me-2">Update</a>
+        <a (click)="deleteEmail(item.id)" class="btn btn-sm btn-danger">Delete</a>
+    </td>
+    </tr>
+</table>
+<hr>
+<nav aria-label="Page navigation example mt-3">
+    <ul class="pagination" id="pagination">
+    <li class="page-item">
+        <a class="page-link" href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+        </a>
+    </li>
+    <li class="page-item" *ngFor="let item of pages"><a class="page-link" (click)="SearchByPagingCriteria(item)">{{item + 1}}</a></li>
+    <li class="page-item">
+        <a class="page-link" href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+        </a>
+    </li>
+    </ul>
+</nav>
+</div>
+
+<div id="MessIfNoResult" class="mt-3" *ngIf="data?.length == 0">
+<h3>Không có nội dung nào để hiển thị!</h3>
+</div>
+
+
+
+  
+  

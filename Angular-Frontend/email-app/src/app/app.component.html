@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+  <!-- Links -->
+  <ul class="navbar-nav">
+    <li class="nav-item">
+        <a routerLink="/emails" class="nav-link" routerLinkActive="active">Email List</a>
+    </li>
+    <li class="nav-item">
+        <a routerLink="/addemail" class="nav-link" routerLinkActive="active">Add Email</a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="/search" class="nav-link" routerLinkActive="active">Search Email</a>
+    </li>
+  </ul>
+</nav>
+<div class="container">
+  <br>
+  <h2 style="text-align: center;">{{title}}</h2>
+  <hr>  
+  <div class="card">
+    <div class="card-body">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+      <span>Designed By Vu Minh Manh</span>
+  </div>
+</footer>

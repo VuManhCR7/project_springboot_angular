@@ -1,0 +1,35 @@
+<h3>Create Email</h3>
+<div [hidden]="submitted" style="width: 400px;">
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="code">Ma</label>
+            <input type="text" class="form-control" id="code" required [(ngModel)]="email.ma" name="code">
+        </div>
+        <div class="form-group">
+            <label for="content">Noi dung</label>
+            <input type="text" class="form-control" id="content" required [(ngModel)]="email.noi_dung" name="content">
+        </div>
+        <div class="form-group">
+            <label for="creator">Nguoi tao</label>
+            <input type="text" class="form-control" id="creator" required [(ngModel)]="email.nguoi_tao" name="creator">
+        </div>
+        <div class="form-group">
+            <label for="dateCreated">Ngay tao</label>
+            <input type="date" class="form-control" id="dateCreated" required [(ngModel)]="email.ngay_tao" name="dateCreated">
+        </div>
+        <div class="form-group">
+            <label for="repairer">Nguoi sua</label>
+            <input type="text" class="form-control" id="repairer" required [(ngModel)]="email.nguoi_sua" name="repairer">
+        </div>
+        <div class="form-group">
+            <label for="dateFixed">Ngay sua</label>
+            <input type="date" class="form-control" id="dateFixed" required [(ngModel)]="email.ngay_sua" name="dateFixed">
+        </div>
+
+        <button type="submit" class="btn btn-success">Add</button>
+    </form>
+</div>
+
+<div [hidden]="!submitted">
+    <h4>Bạn đã thêm thành công một email!</h4>
+</div>

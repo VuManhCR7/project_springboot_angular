@@ -1,0 +1,37 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h2>Email List</h2>
+    </div>
+    <div class="panel-body">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Code</th>
+                    <th>Content</th>
+                    <th>Creator</th>
+                    <th>Date Created</th>
+                    <th>Repairer</th>
+                    <th>Date Fixed</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let email of emails | async">
+                    <td>{{email.id}}</td>
+                    <td>{{email.ma}}</td>
+                    <td>{{email.noi_dung}}</td>
+                    <td>{{email.nguoi_tao}}</td>
+                    <td>{{email.ngay_tao}}</td>
+                    <td>{{email.nguoi_sua}}</td>
+                    <td>{{email.ngay_sua}}</td>
+                    <td>
+                        <button (click)="editEmail(email.id)" class="btn btn-sm me-2 btn-info" style="margin-top: 5px;">Update</button>
+                        <button (click)="deleteEmail(email.id)" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal" style="margin-top: 5px;">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+

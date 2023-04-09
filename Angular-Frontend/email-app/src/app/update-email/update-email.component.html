@@ -1,0 +1,36 @@
+<h3>Update Email</h3>
+<div [hidden]="submitted" style="width:400px;">
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="ma">Ma</label>
+            <input type="text" class="form-control" value="{{email.ma}}" id="ma" required [(ngModel)]="email.ma" name="ma">
+        </div>
+        <div class="form-group">
+            <label for="content">Noi dung</label>
+            <input type="text" class="form-control" value="{{email.noi_dung}}" id="content" required [(ngModel)]="email.noi_dung" name="content">
+        </div>
+        <div class="form-group">
+            <label for="creator">Nguoi tao</label>
+            <input type="text" class="form-control" value="{{email.nguoi_tao}}" id="creator" required [(ngModel)]="email.nguoi_tao" name="creator">
+        </div>
+        <div class="form-group">
+            <label for="dateCreated">Ngay tao</label>
+            <input type="String" class="form-control" value="{{email.ngay_tao}}" id="dateCreated" required [(ngModel)]="email.ngay_tao" name="dateCreated">
+        </div>
+        <div class="form-group">
+            <label for="repairer">Nguoi sua</label>
+            <input type="text" class="form-control" value="{{email.nguoi_sua}}" id="repairer" required [(ngModel)]="email.nguoi_sua" name="repairer">
+        </div>
+        <div class="form-group">
+            <label for="dateFixed">Ngay sua</label>
+            <input type="String" class="form-control" value="{{email.ngay_sua}}" id="dateFixed" required [(ngModel)]="email.ngay_sua" name="dateFixed">
+        </div>
+
+        <button type="submit" class="btn btn-success">Save changes</button>
+    </form>
+
+</div>
+
+<div [hidden]="!submitted">
+    <h4>Thông tin của email đã được cập nhật!!</h4>
+</div>

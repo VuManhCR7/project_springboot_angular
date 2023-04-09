@@ -1,0 +1,15 @@
+<!-- Modal -->
+<div class="modal-dialog" id="exampleModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Xác nhận xóa</h1>
+      </div>
+      <div class="modal-body">
+        Bạn có chắc chắn muốn xóa email có id <b>{{data.id}}</b> không?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="exit()">Thoát</button>
+        <button type="button" class="btn btn-danger" (click)="confirmDelete(this.id)">Xóa</button>
+      </div>
+    </div>
+</div>
